@@ -1,5 +1,5 @@
-import Image from "next/image"
-import ContactFormButton from "./contact-form-button"
+import Image from "next/image";
+import ContactFormButton from "./contact-form-button";
 
 export default function Hero() {
   return (
@@ -8,19 +8,17 @@ export default function Hero() {
         {/* Text content - takes full width on mobile */}
         <div className="w-full md:w-3/5 z-10">
           <h1 className="text-black dark:text-white text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
-            Your AI-first
-            <span className="block text-[#7A7FEE] dark:text-[#7A7FEE]">Development</span>
-            Partner
+            Internet que impulsa.
+            <span className="block text-[#00eaff] dark:text-[#00eaff]">
+              tu mundo
+            </span>
           </h1>
           <p className="my-6 text-sm md:text-base max-w-md text-gray-700 dark:text-gray-300">
-            We build high-quality, scalable platforms—client portals, marketplaces, AI automations, and SaaS—using the
-            best tools for the job, no shortcuts.
+            Conexiones rápidas, seguras y estables para que trabajes, estudies y
+            disfrutes sin límites.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <ContactFormButton />
-            <a href="#services" className="btn-secondary text-black dark:text-white">
-              Learn more
-            </a>
           </div>
         </div>
 
@@ -36,5 +34,5 @@ export default function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }

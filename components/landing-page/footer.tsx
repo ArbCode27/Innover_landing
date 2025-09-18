@@ -1,21 +1,22 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import Image from "next/image"
-import { useTheme } from "next-themes"
-import { useState, useEffect } from "react"
+import Link from "next/link";
+import Image from "next/image";
+import { useTheme } from "next-themes";
+import { useState, useEffect } from "react";
 
 export default function Footer() {
-  const { resolvedTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   // Ensure component is mounted before rendering theme-dependent elements
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   // Determine which logo to show based on theme
-  const logoSrc = mounted && resolvedTheme === "dark" ? "/logo-light.png" : "/logo-dark.png"
+  const logoSrc =
+    mounted && resolvedTheme === "dark" ? "/innover.png" : "/innover.png";
 
   return (
     <footer className="container py-8 border-t border-gray-200 dark:border-gray-800">
@@ -34,13 +35,14 @@ export default function Footer() {
           )}
         </Link>
         <p className="text-sm text-gray-600 dark:text-gray-400 max-w-md mx-auto mb-8">
-          Your AI-first development partner building high-quality, scalable platforms.
+          Tu socio tecnológico en internet, innovación y conectividad sin
+          límites.
         </p>
 
         <p className="text-sm text-gray-500 dark:text-gray-400">
-          © {new Date().getFullYear()} Automatic. All rights reserved.
+          © {new Date().getFullYear()} Todos los derechos reservados.
         </p>
       </div>
     </footer>
-  )
+  );
 }

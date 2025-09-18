@@ -1,23 +1,29 @@
-import Image from "next/image"
-import ContactFormButton from "./contact-form-button"
+import Image from "next/image";
+import ContactFormButton from "./contact-form-button";
 
 export default function CallToAction() {
   return (
-    <section id="contact" className="card my-20 relative overflow-hidden shadow-md">
+    <section
+      id="contact"
+      className="card my-20 relative overflow-hidden shadow-md"
+    >
       <div className="p-8 md:p-10 lg:p-12 flex flex-col md:flex-row items-start">
         {/* Text content - takes full width on mobile */}
         <div className="w-full md:w-3/5 z-10">
           <h2 className="text-black dark:text-white mb-6 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
-            Your Next Big Idea <span className="text-[#7A7FEE] dark:text-[#7A7FEE]">Starts</span> Here
+            Tu próxima gran conexión{" "}
+            <span className="text-[#00eaff] dark:text-[#00eaff]">
+              empieza aquí
+            </span>
           </h2>
           <p className="my-6 text-sm md:text-base max-w-md text-gray-700 dark:text-gray-300">
-            Have an idea or a problem that needs solving?
+            Disfruta de Internet de alta velocidad, estable y sin límites con
+            nuestra red de fibra óptica y radiofrecuencia. Conéctate mejor,
+            trabaja más rápido y vive sin interrupciones.
           </p>
-          <p className="mb-6 text-sm md:text-base max-w-md text-gray-700 dark:text-gray-300">
-            Let's chat. We'll help you explore the best approach, map out a plan, and see if we're the right fit.
-          </p>
+
           <div>
-            <ContactFormButton />
+            <ContactFormButton>Contrata tu plan hoy</ContactFormButton>
           </div>
         </div>
 
@@ -33,5 +39,5 @@ export default function CallToAction() {
         </div>
       </div>
     </section>
-  )
+  );
 }

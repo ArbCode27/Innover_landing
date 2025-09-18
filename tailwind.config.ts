@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -17,12 +17,12 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#1d00fa",
+          foreground: "#1d00fa",
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#8d4aef",
+          foreground: "#8d4aef",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -33,8 +33,8 @@ const config: Config = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "#00eaff",
+          foreground: "#00eaff",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -97,6 +97,6 @@ const config: Config = {
     },
   },
   plugins: [require("@tailwindcss/typography"), require("tailwindcss-animate")],
-}
+};
 
-export default config
+export default config;

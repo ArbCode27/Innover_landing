@@ -1,72 +1,78 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import Link from "next/link"
-import { usePathname, useRouter } from "next/navigation"
-import { Menu } from "lucide-react"
-import ThemeToggle from "./theme-toggle"
-import { useTheme } from "next-themes"
-import NavDropdown from "./nav-dropdown"
-import MobileMenu from "./mobile-menu"
-import { resourcesDropdownData } from "./nav-data"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { Menu } from "lucide-react";
+import ThemeToggle from "./theme-toggle";
+import { useTheme } from "next-themes";
+import MobileMenu from "./mobile-menu";
+import ContactFormButton from "./contact-form-button";
 
 export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [mounted, setMounted] = useState(false)
-  const { resolvedTheme } = useTheme()
-  const pathname = usePathname()
-  const router = useRouter()
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
+  const pathname = usePathname();
+  const router = useRouter();
 
   // Ensure component is mounted before rendering theme-dependent elements
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       // Update header background when scrolled
       if (window.scrollY > 10) {
-        setIsScrolled(true)
+        setIsScrolled(true);
       } else {
-        setIsScrolled(false)
+        setIsScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll);
 
     // Initial check in case page is loaded scrolled down
-    handleScroll()
+    handleScroll();
 
     return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   // Handle logo click with theme preservation
   const handleLogoClick = (e: React.MouseEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
     // Use router.push instead of Link's default behavior
-    router.push("/")
-  }
+    router.push("/");
+  };
 
   // Determine which logo to show based on theme
-  const logoSrc = mounted && resolvedTheme === "dark" ? "/logo-light.png" : "/logo-dark.png"
+  const logoSrc =
+    mounted && resolvedTheme === "dark" ? "/innover.png" : "/innover.png";
 
   return (
     <>
       <header
         className={`sticky top-0 z-40 w-full transition-all duration-200 ${
-          isScrolled ? "bg-white/90 dark:bg-[#111111]/90 backdrop-blur-sm shadow-sm" : "bg-transparent"
+          isScrolled
+            ? "bg-[#f2f2f2]/40 dark:bg-[#f2f2f2]/40 backdrop-blur-sm shadow-sm"
+            : "bg-transparent"
         }`}
       >
         <div className="container py-4">
           <div className="flex items-center justify-between">
-            <Link href="/" className="flex items-center" onClick={handleLogoClick}>
+            <Link
+              href="/"
+              className="flex items-center"
+              onClick={handleLogoClick}
+            >
               {/* Use a div with the same dimensions during SSR to prevent layout shift */}
               {mounted ? (
                 <Image
@@ -84,7 +90,7 @@ export default function Header() {
 
             <div className="flex items-center space-x-4">
               {/* Desktop Navigation */}
-              <nav className="hidden md:block">
+              {/* <nav className="hidden md:block">
                 <ul className="flex space-x-6">
                   <li className="hidden md:block">
                     <NavDropdown
@@ -119,9 +125,10 @@ export default function Header() {
                     </Link>
                   </li>
                 </ul>
-              </nav>
+              </nav> */}
 
               <ThemeToggle />
+              <ContactFormButton />
 
               {/* Mobile Menu Button */}
               <button
@@ -137,7 +144,10 @@ export default function Header() {
       </header>
 
       {/* Mobile Menu */}
-      <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
+      <MobileMenu
+        isOpen={mobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
+      />
     </>
-  )
+  );
 }

@@ -58,7 +58,7 @@ export default function StartProject() {
     <div className="min-h-screen bg-white dark:bg-[#111111] pt-8">
       <div className="text-center pt-8">
         <h2 className="text-black dark:text-white text-3xl md:text-5xl font-medium">
-          Hablemos de tu <span className="text-[#7A7FEE]">conexión</span>?
+          Hablemos de tu <span className="text-[#7A7FEE]">conexión</span>
           <br />
         </h2>
         <p className="max-w-[640px] container mx-auto mt-2 text-lg">

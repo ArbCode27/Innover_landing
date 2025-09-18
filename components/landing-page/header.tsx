@@ -131,13 +131,13 @@ export default function Header() {
               <ContactFormButton />
 
               {/* Mobile Menu Button */}
-              <button
+              {/* <button
                 onClick={() => setMobileMenuOpen(true)}
                 className="p-2 rounded-md bg-transparent hover:bg-gray-200/50 dark:hover:bg-gray-800/20 md:hidden"
                 aria-label="Toggle menu"
               >
                 <Menu className="h-6 w-6 text-black dark:text-white" />
-              </button>
+              </button> */}
             </div>
           </div>
         </div>

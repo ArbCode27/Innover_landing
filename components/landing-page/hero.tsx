@@ -1,9 +1,45 @@
+"use client";
 import Image from "next/image";
 import ContactFormButton from "./contact-form-button";
+import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function Hero() {
+  const API_URL = "https://www.cloud.wispro.co/api/v1/clients";
+  const API_KEY = "722b13d6-3a27-41ea-9937-f18b1931d71f";
+  useEffect(() => {
+    const clients = async () => {
+      const res = await fetch(API_URL, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${API_KEY}`,
+        },
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Error en la petición");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    clients();
+  });
   return (
-    <section id="hero" className="card my-8 relative overflow-hidden shadow-md">
+    <motion.section
+      initial={{ opacity: 0, translateY: -20 }}
+      animate={{ opacity: 1, translateY: 0 }}
+      transition={{ duration: 0.8, ease: "easeIn" }}
+      viewport={{ once: true }}
+      id="hero"
+      className="card my-8 relative overflow-hidden shadow-md"
+    >
       <div className="p-8 md:p-10 lg:p-12 flex flex-col md:flex-row items-start">
         {/* Text content - takes full width on mobile */}
         <div className="w-full md:w-3/5 z-10">
@@ -33,6 +69,6 @@ export default function Hero() {
           />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

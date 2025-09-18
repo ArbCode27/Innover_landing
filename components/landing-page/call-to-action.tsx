@@ -1,9 +1,15 @@
+"use client";
 import Image from "next/image";
 import ContactFormButton from "./contact-form-button";
+import { motion } from "framer-motion";
 
 export default function CallToAction() {
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0, translateY: -20 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      transition={{ duration: 0.8, ease: "easeIn" }}
+      viewport={{ once: true }}
       id="contact"
       className="card my-20 relative overflow-hidden shadow-md"
     >
@@ -38,6 +44,6 @@ export default function CallToAction() {
           />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

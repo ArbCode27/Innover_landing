@@ -1,7 +1,7 @@
 "use client";
-
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 
 const faqs = [
   {
@@ -51,7 +51,14 @@ export default function Faq() {
   };
 
   return (
-    <section id="faq" className="my-20">
+    <motion.section
+      initial={{ opacity: 0, translateY: -20 }}
+      whileInView={{ opacity: 1, translateY: 0 }}
+      transition={{ duration: 0.8, ease: "easeIn" }}
+      viewport={{ once: true, margin: "-200px" }}
+      id="faq"
+      className="my-20"
+    >
       <div className="card p-8 md:p-10 shadow-lg">
         <h2 className="text-black dark:text-white mb-6 text-3xl md:text-4xl lg:text-5xl font-medium leading-tight">
           Preguntas frecuentes sobre tu
@@ -95,6 +102,6 @@ export default function Faq() {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

@@ -55,14 +55,14 @@ export default function Header() {
 
   // Determine which logo to show based on theme
   const logoSrc =
-    mounted && resolvedTheme === "dark" ? "/innover.png" : "/innover.png";
+    mounted && resolvedTheme === "dark" ? "/innoverdark.webp" : "/innover.png";
 
   return (
     <>
       <header
         className={`sticky top-0 z-40 w-full transition-all duration-200 ${
           isScrolled
-            ? "bg-[#f2f2f2]/40 dark:bg-[#f2f2f2]/40 backdrop-blur-sm shadow-sm"
+            ? "bg-[#f2f2f2]/40 dark:bg-[#111928]/80 backdrop-blur-sm shadow-sm"
             : "bg-transparent"
         }`}
       >
@@ -77,7 +77,7 @@ export default function Header() {
               {mounted ? (
                 <Image
                   src={logoSrc || "/placeholder.svg"}
-                  alt="Automatic Logo"
+                  alt="Innover"
                   width={200}
                   height={50}
                   className="h-12 w-auto"

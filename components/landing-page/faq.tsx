@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     id: 2,
-    question: "H¿En qué zonas está disponible el servicio de fibra óptica?",
+    question: "¿En qué zonas está disponible el servicio de fibra óptica?",
     answer:
       "El servicio de fibra óptica está disponible principalmente en áreas urbanas y suburbanas con cobertura de infraestructura. Puedes consultar la disponibilidad exacta ingresando tu dirección en nuestro sitio web o contactando a nuestro equipo de ventas.",
   },

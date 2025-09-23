@@ -25,17 +25,9 @@ export default function Footer() {
           href="/"
           className="flex flex-col text-gray-400 items-center justify-center mb-4 text-[12px]"
         >
-          {mounted ? (
-            <Image
-              src={logoSrc || "/placeholder.svg"}
-              alt="Automatic Logo"
-              width={200}
-              height={50}
-              className="h-12 w-auto"
-            />
-          ) : (
-            <div className="h-12 w-[200px]" />
-          )}
+          <h3 className="font-semibold text-2xl text-[#111928]">
+            CONEXIONES INNOVER
+          </h3>
           <p className="mt-1">Rif: J 50316437-9</p>
           <p className="mt-1">Innover.ca@gmail.com</p>
         </Link>

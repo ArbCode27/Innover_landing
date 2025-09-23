@@ -36,7 +36,8 @@ export default function Footer() {
           ) : (
             <div className="h-12 w-[200px]" />
           )}
-          Rif: J 50316437-9
+          <p className="mt-1">Rif: J 50316437-9</p>
+          <p className="mt-1">Innover.ca@gmail.com</p>
         </Link>
         <p className="text-sm text-gray-600 dark:text-gray-400 max-w-md mx-auto mb-8">
           Tu socio tecnológico en internet, innovación y conectividad sin

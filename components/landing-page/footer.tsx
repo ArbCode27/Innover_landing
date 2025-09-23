@@ -23,7 +23,7 @@ export default function Footer() {
       <div className="flex flex-col items-center text-center">
         <div className="flex flex-col text-gray-400 items-center justify-center mb-4 text-[12px]">
           <h3 className="font-semibold text-2xl text-[#111928]">
-            CONEXIONES INNOVER
+            Conexiones Innover, c.a
           </h3>
           <p className="mt-1">Rif: J 50316437-9</p>
           <p className="mt-1">Innover.ca@gmail.com</p>

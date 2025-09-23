@@ -14,7 +14,7 @@ export default function ContactFormButton({
 }: ContactFormButtonProps) {
   return (
     <Link
-      href="/start"
+      href="/contact"
       className={className || "btn-primary text-black bg-[#00eaff]"}
     >
       {children || "Contáctanos"}

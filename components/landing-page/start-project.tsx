@@ -1,5 +1,4 @@
 "use client";
-
 import ProjectForm from "./project-form";
 import { useEffect } from "react";
 import { useTheme } from "next-themes";
@@ -55,18 +54,47 @@ export default function StartProject() {
   }, [resolvedTheme]);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#111111] pt-8">
-      <div className="text-center pt-8">
-        <h2 className="text-black dark:text-white text-3xl md:text-5xl font-medium">
-          Hablemos de tu <span className="text-[#7A7FEE]">conexión</span>
-          <br />
-        </h2>
-        <p className="max-w-[640px] container mx-auto mt-2 text-lg">
-          Completa el formulario y uno de nuestros asesores se pondrá en
-          contacto contigo.
-        </p>
+    <div className="grid md:grid-cols-2 min-h-screen bg-white dark:bg-[#111111] pt-8 px-8 items-center">
+      <div className="lg:pl-20">
+        <div className="pt-8 text-center md:text-start">
+          <h2 className="text-black dark:text-white text-3xl md:text-5xl font-medium">
+            Hablemos de tu <span className="text-[#7A7FEE]">conexión</span>
+            <br />
+          </h2>
+          <p className="max-w-[640px] mt-2 text-lg">
+            Completa el formulario y uno de nuestros asesores se pondrá en
+            contacto contigo.
+          </p>
+        </div>
+        <div className="mt-8 space-y-6 text-lg hidden md:block">
+          <p>
+            <span className="font-bold">Telefono:</span> 04248908859
+          </p>
+          <p>
+            <span className="font-bold">Email:</span> Innover.ca@gmail.com
+          </p>
+          <p>
+            <span className="font-bold">Direccion:</span> Cua, Urbanizacion
+            Santa Rosa, Centro comercial Charlesville piso 1 local 30
+          </p>
+        </div>
       </div>
-      <ProjectForm />
+      <div>
+        <ProjectForm />
+
+        <div className="mt-4 mb-8 space-y-6 text-lg text-start md:hidden">
+          <p>
+            <span className="font-bold">Telefono:</span> 04248908859
+          </p>
+          <p>
+            <span className="font-bold">Email:</span> Innover.ca@gmail.com
+          </p>
+          <p>
+            <span className="font-bold">Direccion:</span> Cua, Urbanizacion
+            Santa Rosa, Centro comercial Charlesville piso 1 local 30
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

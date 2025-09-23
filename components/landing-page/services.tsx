@@ -38,7 +38,7 @@ export default function Services() {
         duration: 0.8,
         ease: "easeIn",
       }}
-      viewport={{ once: true, margin: "-200px" }}
+      viewport={{ once: true }}
       id="services"
       className="my-20"
     >

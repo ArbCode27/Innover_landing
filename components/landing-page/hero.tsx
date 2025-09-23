@@ -2,35 +2,8 @@
 import Image from "next/image";
 import ContactFormButton from "./contact-form-button";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 
 export default function Hero() {
-  const API_URL = "https://www.cloud.wispro.co/api/v1/clients";
-  const API_KEY = "722b13d6-3a27-41ea-9937-f18b1931d71f";
-  useEffect(() => {
-    const clients = async () => {
-      const res = await fetch(API_URL, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${API_KEY}`,
-        },
-      })
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Error en la petición");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
-    clients();
-  });
   return (
     <motion.section
       initial={{ opacity: 0, translateY: -20 }}

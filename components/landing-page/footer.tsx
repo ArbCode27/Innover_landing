@@ -21,7 +21,10 @@ export default function Footer() {
   return (
     <footer className="container py-8 border-t border-gray-200 dark:border-gray-800">
       <div className="flex flex-col items-center text-center">
-        <Link href="/" className="flex items-center justify-center mb-4">
+        <Link
+          href="/"
+          className="flex flex-col text-gray-400 items-center justify-center mb-4 text-[12px]"
+        >
           {mounted ? (
             <Image
               src={logoSrc || "/placeholder.svg"}
@@ -33,6 +36,7 @@ export default function Footer() {
           ) : (
             <div className="h-12 w-[200px]" />
           )}
+          Rif: J 50316437-9
         </Link>
         <p className="text-sm text-gray-600 dark:text-gray-400 max-w-md mx-auto mb-8">
           Tu socio tecnológico en internet, innovación y conectividad sin
